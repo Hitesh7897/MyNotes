@@ -1,107 +1,158 @@
-##########################################First Program################################################################
+############################################################
+# 📌 Topic: First R Program | Hello World & User Input
+# 📂 Playlist: R Programming – Full Course
+############################################################
 
-######Using Print Function######
+# ==========================================================
+# 1️⃣ What you will learn in this file
+# ==========================================================
+# - Writing your first R program
+# - Using print() and cat()
+# - Creating and calling functions
+# - Taking input from users
+# - Understanding readline() and scan()
+# - Getting help in R
+
+# ==========================================================
+# 2️⃣ Your First Program in R
+# ==========================================================
+# The traditional first program in any language is "Hello World"
+
+# ==========================================================
+# 3️⃣ Using print() function
+# ==========================================================
 
 print("Hello World")
-print("Hello World", quote=FALSE)
 
+# By default, print() shows quotes
+print("Hello World", quote = FALSE)
 
-######Using Functions############
+# ==========================================================
+# 4️⃣ Using Functions in R
+# ==========================================================
+# Functions help us reuse code
 
-new.hello <- function(){
+new.hello <- function() {
   print("Hello World")
 }
 
+# Calling the function
 new.hello()
 
-
-######Reading the Input from the Users############
-
-# In R language readline() method takes input in string format. If one inputs an Integer then it is inputted as a string
-# Here we use <- or = operator to store the output
+# ==========================================================
+# 5️⃣ Reading Input from the User (readline)
+# ==========================================================
+# readline() always takes input as STRING
+# We need to convert it if required
 
 # Syntax
-
-var <- readline();
-var <- as.integer(var);
-
-# Taking Input as a string
-
-var = readline(prompt = "Enter your name: ")
-
-#Taking input as a number and converting it to number
-var = readline(prompt = "Enter a Number : ")
-#as.integer(var) -> Converts to Integer
+var <- readline()
 var <- as.integer(var)
 
-#similarly
+# ==========================================================
+# 6️⃣ Taking Input as a String
+# ==========================================================
 
-# as.numeric(n); -> converts to numeric type (float, double etc)
-# as.complex(n); -> converts to complex number (i.e 3+2i)
-# as.Date(n) -> convert to Date
+name <- readline(prompt = "Enter your name: ")
+print(name)
 
-# taking multiple inputs#
+# ==========================================================
+# 7️⃣ Taking Input as a Number
+# ==========================================================
+
+num <- readline(prompt = "Enter a Number: ")
+num <- as.integer(num)
+print(num)
+
+# ==========================================================
+# 8️⃣ Type Conversion Functions
+# ==========================================================
+# as.integer(n)  -> Converts to integer
+# as.numeric(n)  -> Converts to numeric (double / float)
+# as.complex(n)  -> Converts to complex (e.g., 3+2i)
+# as.Date(n)     -> Converts to Date
+
+# ==========================================================
+# 9️⃣ Taking Multiple Inputs from User
+# ==========================================================
+
 {
-  name = readline(prompt = "Enter Your Name : ")
-  age = readline(prompt = "Enter Your Age : ")
-  place = readline(prompt = "Enter Your Place : ")
+  name  <- readline(prompt = "Enter Your Name: ")
+  age   <- readline(prompt = "Enter Your Age: ")
+  place <- readline(prompt = "Enter Your Place: ")
 }
 
 print(name)
 print(age)
 print(place)
 
+# ==========================================================
+# 🔟 Using scan() Function
+# ==========================================================
+# scan() reads input continuously from console
+# Press ENTER twice to stop input
 
-# scan() method
+# Default: numeric input
+x <- scan()
 
-# This method takes input from console. 
-# This method is a very handy method while inputs are needed to tken quickly for any mathematical calculation or for any datasets
-# scan() method is taking input continuously, to terminate the input process, need to press Enter key 2 times on the console
+# ==========================================================
+# 1️⃣1️⃣ scan() with Data Types
+# ==========================================================
 
-#syntax:
+# Read integer values
+age_int <- scan(what = integer())
 
-x = scan()
+# Read double values
+age_double <- scan(what = double())
 
-# taking input, default is number
-name = scan()
+# Read character values
+names_char <- scan(what = character())
 
-# To read as Integer
+# ==========================================================
+# 1️⃣2️⃣ Reading Data from File using scan()
+# ==========================================================
+# Example (path will vary based on system)
 
-age=scan(what = integer())
+# file_data <- scan("C:\\DESKTOP\\sample.txt")
 
+# ==========================================================
+# 1️⃣3️⃣ Displaying Output
+# ==========================================================
 
-# To read as double
-
-age = scan(what = double())
-
-#To read as character
-
-age = scan(what = character())
-
-# To read the file and also the above parameter are applied for character and double
-
-file = scan("C:\\DESKTOP.....")
-
-# Printing the output of the user
-
-#using the print() function
-
+# Using print()
 print("Hello World")
 
-# There are source() and sink() function which helps great during file handeling
-
-#Using the cat functions
+# Using cat() – cleaner output, no quotes
 cat("Hello World")
 
-#Help info
+# ==========================================================
+# 1️⃣4️⃣ Useful File Handling Functions
+# ==========================================================
+# source() -> Runs an R script from a file
+# sink()   -> Redirects R output to a file
 
-help(print) #Getting help of a function that you know the name of
+# ==========================================================
+# 1️⃣5️⃣ Getting Help in R
+# ==========================================================
+
+# Help for a known function
+help(print)
 ?print
 
+# Examples of functions
 example("paste")
 example("for")
 
-demo() # The demo function gives a longer demonstration of how to use a function
-demo(package = .packages(all.available = TRUE)) #all demos
+# Demos in R
+demo()
+
+# All available demos
+demo(package = .packages(all.available = TRUE))
+
+# Specific demos
 demo(plotmath)
 demo(graphics)
+
+# ==========================================================
+# End of File
+# ==========================================================
